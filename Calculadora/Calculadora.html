@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container-body">
+      <form action="" name="">
+        <p type="text" class="color" id="mostra"></p>
+        <input
+          type="button"
+          class="color"
+          id="tam"
+          name="text-t"
+          value="C"
+          onclick="limpar()"
+        />
+        <div class="div-number">
+          <input
+            type="button"
+            class="color-2"
+            name="botao7"
+            value="7"
+            onclick="mostraNumeros('7')"
+          />
+          <input
+            type="button"
+            class="color-2"
+            name="botao8"
+            value="8"
+            onclick="mostraNumeros('8')"
+          />
+          <input
+            type="button"
+            class="color-2"
+            name="botao9"
+            value="9"
+            onclick="mostraNumeros('9')"
+          />
+
+          <input
+            type="button"
+            class="color-2 operation-c"
+            name="adc"
+            value="+"
+            onclick="mostraNumeros('+')"
+          />
+        </div>
+
+        <div class="div-number">
+          <input
+            type="button"
+            class="color-2"
+            name="botao4"
+            value="4"
+            onclick="mostraNumeros('4')"
+          />
+
+          <input
+            type="button"
+            class="color-2"
+            name="botao5"
+            value="5"
+            onclick="mostraNumeros('5')"
+          />
+          <input
+            type="button"
+            class="color-2"
+            name="botao6"
+            value="6"
+            onclick="mostraNumeros('6')"
+          />
+          <input
+            type="button"
+            class="color-2 operation-c"
+            name="sub"
+            value="-"
+            onclick="mostraNumeros('-')"
+          />
+        </div>
+        <div class="div-number">
+          <input
+            type="button"
+            class="color-2"
+            name="botao1"
+            value="1"
+            onclick="mostraNumeros('1')"
+          />
+          <input
+            type="button"
+            class="color-2"
+            name="botao2"
+            value="2"
+            onclick="mostraNumeros('2')"
+          />
+          <input
+            type="button"
+            class="color-2"
+            name="botao3"
+            value="3"
+            onclick="mostraNumeros('3')"
+          />
+          <input
+            type="button"
+            class="color-2 operation-c"
+            name="multi"
+            value="*"
+            onclick="mostraNumeros('*')"
+          />
+        </div>
+        <div class="div-number">
+          <input
+            type="button"
+            class="color-2"
+            name="ponto"
+            value="."
+            onclick="mostraNumeros('.')"
+          />
+          <input
+            type="button"
+            class="color-2"
+            name="botao0"
+            value="0"
+            onclick="mostraNumeros('0')"
+          />
+          <input
+            type="button"
+            class="color-2"
+            name="botaoeq"
+            value="="
+            onclick="fazerCalculo()"
+          />
+          <input
+            type="button"
+            class="color-2 operation-c"
+            name="divisao"
+            value="/"
+            onclick="mostraNumeros('/')"
+          />
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    const mostraNumeros = (num) => {
+      let calcular = document.getElementById("mostra").innerHTML;
+      document.getElementById("mostra").innerHTML = calcular + num;
+    };
+    const limpar = () => {
+      document.getElementById("mostra").innerHTML = "";
+    };
+
+    const fazerCalculo = () => {
+      let result = document.getElementById("mostra").innerHTML;
+      if (result) {
+        document.getElementById("mostra").innerHTML = eval(result);
+      } else {
+        document.getElementById("mostra").innerHTML = "Erro";
+      }
+    };
+  </script>
+</html>
