@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soma de Dois Números</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container-body">
+      <div class="box">
+        <div class="input-b">
+          <label>Descubra o número:</label>
+          <input type="number" id="number1" />
+        </div>
+        <div>
+          <button onclick="verNumero()">Adivinhar</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let numero = 0;
+
+      const AdivinharNumero = () => {
+        numero = parseInt(Math.random() * 100);
+      };
+
+      const verNumero = () => {
+        let inputNumber = document.getElementById("number1").value;
+        if (inputNumber < 1 || inputNumber > 100) {
+          alert("Não é possivel adivinhar esse número!");
+          return;
+        }
+        if (inputNumber < numero) {
+          alert("O numero é maior!");
+        } else if (inputNumber > numero) {
+          alert("O numero é menor!");
+        } else {
+          alert("Acertou o número!!! ");
+        }
+      };
+
+      AdivinharNumero();
+    </script>
+  </body>
+</html>
